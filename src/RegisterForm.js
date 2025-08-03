@@ -26,15 +26,16 @@ function RegisterForm(){
     };
     return(
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue-200">
-            <div className="bg-white shadow-md p-6 rounded w-full max-w-sm mb-6">
+            <div className="bg-white shadow-md p-6 rounded w-full max-w-sm sm:max-w-md md:max-w-lg mx-4 sm:mx-auto">
                 <h1 className="text-2xl font-semibold mb-4 text-center text-black">Register</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-                    <input type="text" placeholder= "Enter your name"{...register('name')} className="border border-gray-300 p-2 rounded text-black"/>
-                    <input type="email" placeholder= "Enter your email"{...register('email')} className="border border-gray-300 p-2 rounded text-black"/>
+                    <input type="text" placeholder= "Enter your name"{...register('name')} className="border border-gray-300 p-2 rounded text-black w-full "/>
+                    <input type="email" placeholder= "Enter your email"{...register('email')} className="border border-gray-300 p-2 rounded text-black w-full"/>
                     <button type="submit" className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 text-black">Register</button>
                 </form>
             </div>
-            <table className="border border-gray-300 w-full max-w-md text-left">
+            <div className="overflow-x-auto w-full max-w-lg mt-6 px-4">
+                <table className="border border-gray-300 w-full max-w-md text-left min-w-[500px]">
                 <thead>
                     <tr className="bg-gray-200">
                         <th className="border border-gray-300 px-4 py-2 text-black">
@@ -58,6 +59,9 @@ function RegisterForm(){
                     ))}
                 </tbody>
             </table>
+
+            </div>
+            
         </div>
 
     );
